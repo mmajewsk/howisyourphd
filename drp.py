@@ -2,6 +2,10 @@ import os
 import dropbox
 
 token = os.environ.get("DRP_AUTH_TOKEN")
+sec = os.environ.get("TEST_SECRET")
+print(sec)
+print(sec)
+print(sec)
 print(token[:3])
 dbx = dropbox.Dropbox(token)
 
