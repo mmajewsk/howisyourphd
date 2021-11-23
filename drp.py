@@ -16,5 +16,5 @@ if os.path.exists("dis.pdf"):
 else:
   print("The file does not exist")
 
-with open("build/pages.html", "w") as f:
+with open("build/index.html", "w") as f:
     f.write(pages)
