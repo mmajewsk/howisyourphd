@@ -3,6 +3,7 @@ on:  workflow_dispatch
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    environment: phdenv
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
