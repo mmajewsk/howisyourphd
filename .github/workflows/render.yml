@@ -7,7 +7,9 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Get library
-        run: python3 -m pip install dropbox && apt-get install poppler-utils
+        run: |
+          python3 -m pip install dropbox
+          apt-get install poppler-utils
       - name: Make build folder
         run: mkdir build
       - name: Get pages count
