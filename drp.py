@@ -1,7 +1,7 @@
 import os
 import dropbox
 
-token = os.environ.get(DRP_AUTH_TOKEN)
+token = os.environ.get("DRP_AUTH_TOKEN")
 dbx = dropbox.Dropbox(token)
 
 with open("dis.pdf", "wb") as f:
