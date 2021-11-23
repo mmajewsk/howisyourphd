@@ -1,4 +1,4 @@
-name: Build LaTeX document
+name: Build the page
 on:  workflow_dispatch
 jobs:
   build_latex:
@@ -8,9 +8,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Get library
         run: python3 -m pip install dropbox
-      - name: Get library
+      - name: Get pages count
+        shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.DRP_AUTH_TOKEN }}
+          DRP_AUTH_TOKEN: ${{ secrets.DRP_AUTH_TOKEN }}
         run: python3 drp.py
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.6
