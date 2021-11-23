@@ -2,11 +2,6 @@ import os
 import dropbox
 
 token = os.environ.get("DRP_AUTH_TOKEN")
-sec = os.environ.get("TEST_SECRET")
-print(sec)
-print(sec)
-print(sec)
-print(token[:3])
 dbx = dropbox.Dropbox(token)
 
 
@@ -21,5 +16,5 @@ if os.path.exists("dis.pdf"):
 else:
   print("The file does not exist")
 
-with open("pages.txt", "w") as f:
+with open("build/pages.html", "w") as f:
     f.write(pages)
