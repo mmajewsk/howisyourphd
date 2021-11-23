@@ -1,5 +1,8 @@
 name: Build the page
-on:  workflow_dispatch
+on:  
+  schedule:
+  - cron:  '0 8,20 * * *'
+  
 jobs:
   build_latex:
     runs-on: ubuntu-latest
