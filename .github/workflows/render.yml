@@ -9,7 +9,7 @@ jobs:
       - name: Get library
         run: |
           python3 -m pip install dropbox
-          apt-get install poppler-utils
+          sudo apt-get install poppler-utils
       - name: Make build folder
         run: mkdir build
       - name: Get pages count
