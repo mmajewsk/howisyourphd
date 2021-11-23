@@ -16,6 +16,8 @@ jobs:
         shell: bash
         env:
           DRP_AUTH_TOKEN: ${{ secrets.DRP_AUTH_TOKEN }}
+          FINISHED: ${{ secrets.FINISHED }}
+          WHEN: ${{ secrets.WHEN }}
         run: python3 drp.py
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.6
