@@ -9,6 +9,8 @@ jobs:
       - name: Get library
         run: python3 -m pip install dropbox
       - name: Get library
+        env:
+          SUPER_SECRET: ${{ secrets.DRP_AUTH_TOKEN }}
         run: python3 drp.py
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.6
