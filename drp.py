@@ -15,6 +15,7 @@ with open("dis.pdf", "wb") as f:
     f.write(res.content)
 stream = os.popen('pdfinfo dis.pdf | grep "Pages:"')
 pages = stream.read()
+print("Pages: "+pages)
 
 if os.path.exists("dis.pdf"):
   os.remove("dis.pdf")
