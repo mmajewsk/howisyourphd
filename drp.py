@@ -4,7 +4,7 @@ import datetime
 import pytz
 
 tz = pytz.timezone('Europe/Warsaw')
-warsaw_now = datetime.now(tz)
+warsaw_now = datetime.datetime.now(tz)
 
 token = os.environ.get("DRP_AUTH_TOKEN")
 dbx = dropbox.Dropbox(token)
