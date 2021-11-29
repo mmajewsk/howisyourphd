@@ -2,6 +2,7 @@ name: Build the page
 on:  
   schedule:
   - cron:  '0 8,20 * * *'
+  workflow_dispatch:
   
 jobs:
   build_latex:
