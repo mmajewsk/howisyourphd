@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get library
         run: |
-          python3 -m pip install dropbox
+          python3 -m pip install -r requirements.txt
           sudo apt-get install poppler-utils
       - name: Make build folder
         run: mkdir build
