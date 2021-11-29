@@ -1,6 +1,10 @@
 import os
 import dropbox
 import datetime
+import pytz
+
+tz = pytz.timezone('Europe/Warsaw')
+warsaw_now = datetime.now(tz)
 
 token = os.environ.get("DRP_AUTH_TOKEN")
 dbx = dropbox.Dropbox(token)
@@ -21,7 +25,7 @@ with open("source.html") as f:
   template = f.read()
 
 p = pages.split()[1]
-t = str(datetime.datetime.now())
+t = warsaw_now.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4] +" "+ warsaw_now.strftime("%Z%z")[:-2]
 finished = os.environ.get("FINISHED")
 when = os.environ.get("WHEN")
 with open("build/index.html", "w") as f:
