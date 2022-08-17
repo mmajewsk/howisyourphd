@@ -27,7 +27,9 @@ with open("source.html") as f:
 
 p = pages.split()[1]
 t = warsaw_now.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4] +" "+ warsaw_now.strftime("%Z%z")[:-2]
-finished = os.environ.get("FINISHED")
-when = os.environ.get("WHEN")
+with open("finished.html") as f:
+    finished = f.read()
+with open("when.html") as f:
+    when = f.read()
 with open("build/index.html", "w") as f:
   f.write(template.format(date=t, pages=p, finished=finished, when=when))
